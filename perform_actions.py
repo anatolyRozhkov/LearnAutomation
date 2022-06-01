@@ -8,13 +8,21 @@ class Actions(object):
         self.driver = driver
         self.wait_time = 10
 
-    def perform_click(self, locator):
+    def go(self, url):
+        self.driver.get(url)
+        return None
+
+    def refresh(self):
+        self.driver.refresh()
+        return None
+
+    def click(self, locator):
         element = WebDriverWait(self.driver, self.wait_time).until(
             ec.element_to_be_clickable(locator))
         element.click()
         return None
 
-    def perform_click_by_enter(self, locator):
+    def click_by_enter(self, locator):
         element = WebDriverWait(self.driver, self.wait_time).until(
             ec.element_to_be_clickable(locator))
         element.send_keys(Keys.RETURN)

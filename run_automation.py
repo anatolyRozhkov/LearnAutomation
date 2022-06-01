@@ -19,8 +19,8 @@ chrome_options.add_argument(f"--window-size=1920,1080")
 driver = webdriver.Chrome(options=chrome_options, service=chrome_service)
 
 # execute code
-driver.get("https://uptrader-staging-primary.uptr.dev/auth/login")
 page = Actions(driver)
+page.go("https://uptrader-staging-primary.uptr.dev/auth/login")
 
 # input email
 page.input_text((By.XPATH, "//input[@id='emailOrPhone']"), "admin@uptrader.us")
