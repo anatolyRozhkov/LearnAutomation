@@ -16,6 +16,10 @@ class Actions(object):
         self.driver.refresh()
         return None
 
+    def switch_to_tab(self, tab):
+        self.driver.switch_to.window(self.driver.window_handles[tab])
+        return None
+
     def click(self, locator):
         element = WebDriverWait(self.driver, self.wait_time).until(
             ec.element_to_be_clickable(locator))
