@@ -27,4 +27,4 @@ page.input_text((By.XPATH, "//input[@id='emailOrPhone']"), "admin@uptrader.us")
 # input password
 page.input_text((By.CSS_SELECTOR, "#password"), "qwerty123")
 # click on submit button
-page.perform_click((By.CSS_SELECTOR, "button[type='submit']"))
+page.click((By.CSS_SELECTOR, "button[type='submit']"))
